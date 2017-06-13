@@ -17,7 +17,11 @@ var location1 = {
   avgCookiePerSale: 6.3,
   addToPage: function(){
     var newEl = document.createElement('h3');
-    var newText = document.createTextNode(this.location);
+
+    //var newText = document.createTextNode(this.location);
+    //newEl.appendChild(newText);
+    newEl.textContent = this.location;
+
     var position = document.getElementsByTagName('body')[0];
     position.appendChild(newEl);
   },
@@ -48,8 +52,8 @@ var location2 = {
   avgCookiePerSale: 1.2,
   addToPage: function(){
     var newEl = document.createElement('h3');
-    var newText = document.createTextNode(this.location);
-    var position = document.getElementsByTagName('body')[1];
+    newEl.textContent = this.location;
+    var position = document.getElementsByTagName('body')[0];
     position.appendChild(newEl);
   },
 
@@ -71,8 +75,8 @@ var location3 = {
   avgCookiePerSale: 3.7,
   addToPage: function(){
     var newEl = document.createElement('h3');
-    var newText = document.createTextNode(this.location);
-    var position = document.getElementsByTagName('body')[2];
+    newEl.textContent = this.location;
+    var position = document.getElementsByTagName('body')[0];
     position.appendChild(newEl);
   },
 
@@ -94,8 +98,8 @@ var location4 = {
   avgCookiePerSale: 2.3,
   addToPage: function(){
     var newEl = document.createElement('h3');
-    var newText = document.createTextNode(this.location);
-    var position = document.getElementsByTagName('body')[3];
+    newEl.textContent = this.location;
+    var position = document.getElementsByTagName('body')[0];
     position.appendChild(newEl);
   },
 
@@ -117,9 +121,9 @@ var location5 = {
   avgCookiePerSale: 4.6,
   addToPage: function(){
     var newEl = document.createElement('h3');
-    var newText = document.createTextNode(this.location);
-    var position = document.getElementsByTagName('body')[4];
-    position.appendChild(newEl);
+    newEl.textContent = this.location;
+    // TODO: Use document.body elsewhere
+    document.body.appendChild(newEl);
   },
 
   getCookieNeed: function(){
@@ -135,3 +139,8 @@ var location5 = {
 location1.getCookieNeed();
 location1.addToPage();
 location1.totalCookieSum();
+
+location2.addToPage();
+location3.addToPage();
+location4.addToPage();
+location5.addToPage();
